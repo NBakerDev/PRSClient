@@ -14,7 +14,7 @@ import { UserService } from '../user.service';
 })
 export class UserEditComponent implements OnInit {
 
-  user: User;
+  user: User 
   password2: string;
 
   constructor(
@@ -23,7 +23,7 @@ export class UserEditComponent implements OnInit {
     private usersvc: UserService) { }
 
     save(): void {
-      if (this.user.Password !== this.password2) {
+      if (this.user.password !== this.password2) {
         alert("Passwords must match");
         return;
       }
@@ -40,7 +40,7 @@ export class UserEditComponent implements OnInit {
     this.usersvc.get(userid).subscribe(
       user => {
         this.user = user;
-        this.password2 = this.user.Password;
+        this.password2 = this.user.password;
         console.log("User:", user);
       },
       err => { console.error(err); }

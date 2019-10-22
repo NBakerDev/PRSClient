@@ -1,7 +1,7 @@
 export  class User {
     id: number = 0;
     Username: string = "Required";
-    Password: string = "Required";
+    password: string = "Required";
     Firstname: string = "Required";
     Lastname: string = "Required"; 
     Phone: string;

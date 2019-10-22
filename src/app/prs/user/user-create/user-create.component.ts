@@ -19,7 +19,7 @@ export class UserCreateComponent implements OnInit {
   ) { }
 
   save(): void {
-    if(this.user.Password !== this.password2) {
+    if(this.user.password !== this.password2) {
       alert("Passwords don't match!");
       return;
     }

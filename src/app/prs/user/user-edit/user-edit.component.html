@@ -1,5 +1,5 @@
-<div class="component">
-        <div class="header"><span class="pagetitle">User Edit</span> |</div>
+<div class="component" *ngIf="user">
+        <div class="header"><span class="pagetitle">User Edit</span> | <span><a routerLink="/users/list">Back to List</a></span></div>
         <table class="table table-dark" >
           <tr>
             <td>Id:</td>

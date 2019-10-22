@@ -12,6 +12,8 @@ import { UserDetailComponent } from './prs/user/user-detail/user-detail.componen
 import { UserCreateComponent } from './prs/user/user-create/user-create.component';
 import { UserEditComponent } from './prs/user/user-edit/user-edit.component';
 import { UserDeleteComponent } from './prs/user/user-delete/user-delete.component';
+import { MenuComponent } from './core/menu/menu.component';
+import { MenuItemComponent } from './core/menu-item/menu-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { UserDeleteComponent } from './prs/user/user-delete/user-delete.componen
     UserDetailComponent,
     UserCreateComponent,
     UserEditComponent,
-    UserDeleteComponent
+    UserDeleteComponent,
+    MenuComponent,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,
