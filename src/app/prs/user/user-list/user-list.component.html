@@ -1,0 +1,28 @@
+<div class = "component">
+<div class = "header">
+<span class = "pagetitle">User List</span> | 
+<span class = "createlink"><a routerLink="/users/create" >Create New</a></span>
+</div>
+
+<table class = "table table-hover table-dark" >
+    <tr class="tableheader">
+        <td>Id</td>
+        <td>Username</td>
+        <td>Full Name</td>
+        <td>Reviewer</td>
+        <td>Admin</td>
+        <td>Actions</td>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.firstname}} {{user.lastname}}</td>
+        <td>{{user.isReviewer | bool}}</td>
+        <td>{{user.isAdmin | bool}}</td>
+        <td>
+            <span class="actiondetail"><a routerLink = "/users/detail/{{user.id}}">Detail</a></span> |
+            <span class="actiondetail"><a routerLink = "/users/edit/{{user.id}}">Edit</a></span>
+        </td>
+    </tr>
+</table>
+</div>
