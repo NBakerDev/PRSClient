@@ -8,7 +8,7 @@
     font-style: italic;
 }
 nav {
-    background-color: orangered;
+    background-color: #706F80;
     color: whitesmoke;
     list-style-type: none;
     text-align: center; 
@@ -19,9 +19,29 @@ nav {
   nav li {
     color: whitesmoke;
     display: inline-block;
-    font-size: 20px;
+    font-size: 25px;
     padding: 20px;
+  }
+  ul{
+      margin: 0;
+      padding: 0;
   }
   a{
       color: whitesmoke;
+  }
+  body{
+      background-color: #373642;
+      color: whitesmoke;
+  }
+  tr.tableheader a {
+      cursor: pointer;
+    
+  }
+  a:hover{
+      color:whitesmoke;
+      background-color: #7D7C8F;
+  }
+  .search{
+      border: 0;
+      background-color: #494853d0;
   }

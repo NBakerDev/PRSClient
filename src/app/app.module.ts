@@ -14,6 +14,9 @@ import { UserEditComponent } from './prs/user/user-edit/user-edit.component';
 import { UserDeleteComponent } from './prs/user/user-delete/user-delete.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { MenuItemComponent } from './core/menu-item/menu-item.component';
+import { SortPipe } from './core/pipes/sort.pipe';
+import { SearchUserPipe } from './core/pipes/search-user.pipe';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { MenuItemComponent } from './core/menu-item/menu-item.component';
     UserEditComponent,
     UserDeleteComponent,
     MenuComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    SortPipe,
+    SearchUserPipe,
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,
