@@ -12,7 +12,7 @@ export class UserListComponent implements OnInit {
   users: User[] = [];
   sortCriteria: string = "username";
   sortOrder: string = "asc";
-  searchCriteria: string = " ";
+  searchCriteria: string = "";
 
   sortBy(prop: string): void{
     if(this.sortCriteria === prop){

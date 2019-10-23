@@ -16,6 +16,12 @@ import { MenuComponent } from './core/menu/menu.component';
 import { MenuItemComponent } from './core/menu-item/menu-item.component';
 import { SortPipe } from './core/pipes/sort.pipe';
 import { SearchUserPipe } from './core/pipes/search-user.pipe';
+import { VendorListComponent } from './prs/vendor/vendor-list/vendor-list.component';
+import { VendorDetailComponent } from './prs/vendor/vendor-detail/vendor-detail.component';
+import { VendorCreateComponent } from './prs/vendor/vendor-create/vendor-create.component';
+import { VendorEditComponent } from './prs/vendor/vendor-edit/vendor-edit.component';
+import { SearchVendorPipe } from './core/pipes/search-vendor.pipe';
+import { FooterComponent } from './core/footer/footer.component';
 
 
 @NgModule({
@@ -32,6 +38,12 @@ import { SearchUserPipe } from './core/pipes/search-user.pipe';
     MenuItemComponent,
     SortPipe,
     SearchUserPipe,
+    VendorListComponent,
+    VendorDetailComponent,
+    VendorCreateComponent,
+    VendorEditComponent,
+    SearchVendorPipe,
+    FooterComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,

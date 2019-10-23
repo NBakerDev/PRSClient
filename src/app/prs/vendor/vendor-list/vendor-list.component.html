@@ -1,0 +1,39 @@
+<app-menu></app-menu>
+<div class="component">
+  <div class="header">
+    <span class="pagetitle">Vendor List</span> |
+    <span class="createlink"><a routerLink="/vendors/create">Create New</a></span> | 
+    <input class="search"[(ngModel)]="searchCriteria"type="text"placeholder="Search"/>
+  </div>
+
+  <table class="table table-dark">
+    <tr class="tableheader">
+      <td><a (click)="sortBy('id')">Id</a></td>
+      <td><a (click)="sortBy('code')">Code</a></td>
+      <td><a (click)="sortBy('name')">Name</a></td>
+      <td><a (click)="sortBy('city')">City</a></td>
+      <td><a (click)="sortBy('state')">State</a></td>
+      <td><a (click)="sortBy('address')">Address</a></td>
+      <td><a (click)="sortBy('x')">Actions</a></td>
+      
+    </tr>
+    <tr *ngFor="let vendor of vendors|searchVendor:searchCriteria|sort: sortCriteria:sortOrder">
+      <td>{{ vendor.id }}</td>
+      <td>{{ vendor.code }}</td>
+      <td>{{ vendor.name }} </td>
+      <td>{{ vendor.city }}</td>
+      <td>{{ vendor.state }}</td>
+      <td>{{ vendor.address }}</td>
+      <td>
+            <span class="actiondetail"
+            ><a routerLink="/vendors/detail/{{ vendor.id }}">Detail</a></span
+          >
+          |
+          <span class="actiondetail"
+            ><a routerLink="/vendors/edit/{{ vendor.id }}">Edit</a></span
+          >
+      </td>
+    </tr>
+  </table>
+</div>
+<app-footer></app-footer>
