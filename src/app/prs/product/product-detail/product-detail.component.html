@@ -1,0 +1,47 @@
+<div class="component">
+  <div class="header">
+    <span class="pagetitle">Product Detail</span> |
+    <span><a routerLink="/products/list">Back to List</a></span>
+  </div>
+  <table class="table table-dark" *ngIf="product">
+    <tr>
+      <td>Id:</td>
+      <td>{{ product.id }}</td>
+    </tr>
+    <tr>
+      <td>PartNbr:</td>
+      <td>{{ product.partNbr }}</td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td>{{ product.name }}</td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td>{{ product.price }}</td>
+    </tr>
+    <tr>
+      <td>Unit:</td>
+      <td>{{ product.unit }}</td>
+    </tr>
+    <tr>
+      <td>PhotoPath:</td>
+      <td>{{ product.photoPath }}</td>
+    </tr>
+    <tr>
+      <td>VendorId:</td>
+      <td>{{ product.vendorId }}</td>
+    </tr>
+    <tr>
+      <td>Vendor Name:</td>
+      <td>{{ product.vendor.name }}</td>
+    </tr>
+  </table>
+
+  <button (click)="edit()" class="btn btn-success">Edit</button> |
+  <button (click)="verify()" class="btn btn-warning">Delete</button>
+  <span *ngIf="verifyDelete">
+    |
+    <button (click)="delete()" class="btn btn-danger">Verify</button>
+  </span>
+</div>

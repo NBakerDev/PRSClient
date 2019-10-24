@@ -55,3 +55,7 @@ nav {
   .mt-auto{
     margin-top: auto!important;
   }
+  img {
+      vertical-align: middle;
+      margin:auto;
+  }

@@ -22,6 +22,13 @@ import { VendorCreateComponent } from './prs/vendor/vendor-create/vendor-create.
 import { VendorEditComponent } from './prs/vendor/vendor-edit/vendor-edit.component';
 import { SearchVendorPipe } from './core/pipes/search-vendor.pipe';
 import { FooterComponent } from './core/footer/footer.component';
+import { ProductListComponent } from './prs/product/product-list/product-list.component';
+import { ProductDetailComponent } from './prs/product/product-detail/product-detail.component';
+import { ProductEditComponent } from './prs/product/product-edit/product-edit.component';
+import { ProductCreateComponent } from './prs/product/product-create/product-create.component';
+import { SearchProductPipe } from './core/pipes/search-product.pipe';
+import { HomeComponent } from './core/home/home/home.component';
+import { RequestListComponent } from './prs/request/request-list/request-list.component';
 
 
 @NgModule({
@@ -44,6 +51,13 @@ import { FooterComponent } from './core/footer/footer.component';
     VendorEditComponent,
     SearchVendorPipe,
     FooterComponent,
+    ProductListComponent,
+    ProductDetailComponent,
+    ProductEditComponent,
+    ProductCreateComponent,
+    SearchProductPipe,
+    HomeComponent,
+    RequestListComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,

@@ -12,6 +12,13 @@ import { VendorDetailComponent } from './prs/vendor/vendor-detail/vendor-detail.
 import { VendorCreateComponent } from './prs/vendor/vendor-create/vendor-create.component';
 import { VendorEditComponent } from './prs/vendor/vendor-edit/vendor-edit.component';
 
+import { ProductListComponent } from './prs/product/product-list/product-list.component';
+import { ProductDetailComponent } from './prs/product/product-detail/product-detail.component';
+import { ProductEditComponent } from './prs/product/product-edit/product-edit.component';
+import { ProductCreateComponent } from './prs/product/product-create/product-create.component';
+import { HomeComponent } from './core/home/home/home.component';
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/users/list', pathMatch: 'full'},
@@ -23,6 +30,11 @@ const routes: Routes = [
   { path: 'vendors/detail/:id', component: VendorDetailComponent},
   { path: 'vendors/create', component: VendorCreateComponent},
   { path: 'vendors/edit/:id', component: VendorEditComponent},
+  { path: 'products/list', component: ProductListComponent},
+  { path: 'products/detail/:id', component: ProductDetailComponent},
+  { path: 'products/edit/:id', component: ProductEditComponent},
+  { path: 'products/create', component: ProductCreateComponent},
+  { path: 'home', component: HomeComponent},
   { path: '**', component: FourOhFourComponent}
 ];
 
