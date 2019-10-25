@@ -17,6 +17,9 @@ import { ProductDetailComponent } from './prs/product/product-detail/product-det
 import { ProductEditComponent } from './prs/product/product-edit/product-edit.component';
 import { ProductCreateComponent } from './prs/product/product-create/product-create.component';
 import { HomeComponent } from './core/home/home/home.component';
+import { RequestListComponent } from './prs/request/request-list/request-list.component';
+import { RequestDetailComponent } from './prs/request/request-detail/request-detail.component';
+import { LoginComponent } from './core/logger/login/login.component';
 
 
 
@@ -35,6 +38,9 @@ const routes: Routes = [
   { path: 'products/edit/:id', component: ProductEditComponent},
   { path: 'products/create', component: ProductCreateComponent},
   { path: 'home', component: HomeComponent},
+  { path: 'requests/list', component: RequestListComponent},
+  { path: 'requests/detail/:id', component: RequestDetailComponent},
+  { path: 'login', component: LoginComponent},
   { path: '**', component: FourOhFourComponent}
 ];
 

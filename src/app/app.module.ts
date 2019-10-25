@@ -29,6 +29,8 @@ import { ProductCreateComponent } from './prs/product/product-create/product-cre
 import { SearchProductPipe } from './core/pipes/search-product.pipe';
 import { HomeComponent } from './core/home/home/home.component';
 import { RequestListComponent } from './prs/request/request-list/request-list.component';
+import { RequestDetailComponent } from './prs/request/request-detail/request-detail.component';
+import { LoginComponent } from './core/logger/login/login.component';
 
 
 @NgModule({
@@ -58,6 +60,8 @@ import { RequestListComponent } from './prs/request/request-list/request-list.co
     SearchProductPipe,
     HomeComponent,
     RequestListComponent,
+    RequestDetailComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,
