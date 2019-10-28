@@ -20,6 +20,8 @@ import { HomeComponent } from './core/home/home/home.component';
 import { RequestListComponent } from './prs/request/request-list/request-list.component';
 import { RequestDetailComponent } from './prs/request/request-detail/request-detail.component';
 import { LoginComponent } from './core/logger/login/login.component';
+import { RequestCreateComponent } from './prs/request/request-create/request-create.component';
+import { RequestEditComponent } from './prs/request/request-edit/request-edit.component';
 
 
 
@@ -41,6 +43,8 @@ const routes: Routes = [
   { path: 'requests/list', component: RequestListComponent},
   { path: 'requests/detail/:id', component: RequestDetailComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'requests/create', component: RequestCreateComponent},
+  { path: 'requests/edit/:id', component: RequestEditComponent},
   { path: '**', component: FourOhFourComponent}
 ];
 

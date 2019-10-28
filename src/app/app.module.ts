@@ -31,6 +31,8 @@ import { HomeComponent } from './core/home/home/home.component';
 import { RequestListComponent } from './prs/request/request-list/request-list.component';
 import { RequestDetailComponent } from './prs/request/request-detail/request-detail.component';
 import { LoginComponent } from './core/logger/login/login.component';
+import { RequestCreateComponent } from './prs/request/request-create/request-create.component';
+import { RequestEditComponent } from './prs/request/request-edit/request-edit.component';
 
 
 @NgModule({
@@ -62,6 +64,8 @@ import { LoginComponent } from './core/logger/login/login.component';
     RequestListComponent,
     RequestDetailComponent,
     LoginComponent,
+    RequestCreateComponent,
+    RequestEditComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,

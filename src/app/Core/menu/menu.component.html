@@ -2,5 +2,5 @@
     <ul class="ul">
         <app-menu-item *ngFor = "let menu of menus" [menu] = "menu"></app-menu-item>
     </ul>
-    <span *ngIf="user">Welcome {{user.username}}!</span>
+    <span *ngIf="user">Welcome {{user.firstname}}!</span>
 </nav>

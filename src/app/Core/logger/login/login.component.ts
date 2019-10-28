@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         this.user = res;
         this.systemsvc.SetUser(this.user);
         console.log("User is", this.user);
-        this.router.navigateByUrl("/users/list")
+        this.router.navigateByUrl("/home")
       },
       err => {
         console.log(err);
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
   }
   out() {
     this.systemsvc.ClearUser();
-    this.router.navigateByUrl("/users/list")
+    this.router.navigateByUrl("/home")
   }
 
   ngOnInit() {
