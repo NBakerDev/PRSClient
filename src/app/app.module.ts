@@ -33,6 +33,14 @@ import { RequestDetailComponent } from './prs/request/request-detail/request-det
 import { LoginComponent } from './core/logger/login/login.component';
 import { RequestCreateComponent } from './prs/request/request-create/request-create.component';
 import { RequestEditComponent } from './prs/request/request-edit/request-edit.component';
+import { RequestlineListComponent } from './prs/requestline/requestline-list/requestline-list.component';
+import { AboutComponent } from './core/about/about.component';
+import { RequestlineEditComponent } from './prs/requestline/requestline-edit/requestline-edit.component';
+import { RequestlineCreateComponent } from './prs/requestline/requestline-create/requestline-create.component';
+import { RequestReviewlistComponent } from './prs/request/request-reviewlist/request-reviewlist.component';
+import { RequestReviewlistReviewComponent } from './prs/request/request-reviewlist-review/request-reviewlist-review.component';
+import { SearchRequestPipe } from './core/pipes/search-request.pipe';
+import { RequestlineRemoveComponent } from './prs/requestline/requestline-remove/requestline-remove.component';
 
 
 @NgModule({
@@ -66,6 +74,14 @@ import { RequestEditComponent } from './prs/request/request-edit/request-edit.co
     LoginComponent,
     RequestCreateComponent,
     RequestEditComponent,
+    RequestlineListComponent,
+    AboutComponent,
+    RequestlineEditComponent,
+    RequestlineCreateComponent,
+    RequestReviewlistComponent,
+    RequestReviewlistReviewComponent,
+    SearchRequestPipe,
+    RequestlineRemoveComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule,

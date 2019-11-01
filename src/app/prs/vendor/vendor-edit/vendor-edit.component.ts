@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-
+import { SystemService } from '../../../core/system/system.service'
+import { User } from '../../user/user.class';
 import { Vendor } from '../vendor.class';
 import { VendorService } from '../vendor.service';
 
@@ -12,6 +13,7 @@ import { VendorService } from '../vendor.service';
 })
 export class VendorEditComponent implements OnInit {
 
+  user: User;
   vendor: Vendor;
 
   save(): void {
@@ -26,7 +28,8 @@ export class VendorEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private vendorsvc: VendorService
+    private vendorsvc: VendorService,
+    private systemsvc: SystemService,
   ) { }
 
   ngOnInit() {
@@ -38,6 +41,7 @@ export class VendorEditComponent implements OnInit {
       },
       err => { console.error(err); }
     );
+    this.user = this.systemsvc.GetUser();
     
   }
 

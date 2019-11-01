@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../product.class';
+import { SystemService } from '../../../core/system/system.service'
+import { User } from '../../user/user.class';
 
 @Component({
   selector: 'app-product-list',
@@ -9,6 +11,7 @@ import { Product } from '../product.class';
 })
 export class ProductListComponent implements OnInit {
 
+  user: User;
   products: Product[] = [];
   sortCriteria: string = "name";
   sortOrder: string = "asc";
@@ -22,7 +25,8 @@ export class ProductListComponent implements OnInit {
   }
 
   constructor(
-    private productsvc: ProductService) { }
+    private productsvc: ProductService,
+    private systemsvc: SystemService,) { }
 
   ngOnInit() {
     this.productsvc.list().subscribe(
@@ -34,6 +38,7 @@ export class ProductListComponent implements OnInit {
         console.log(err);
   }
     );
+    this.user = this.systemsvc.GetUser();
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { SystemService } from '../../../core/system/system.service'
 
 import { User } from '../user.class';
 import { UserService } from '../user.service';
@@ -20,7 +20,8 @@ export class UserEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private usersvc: UserService) { }
+    private usersvc: UserService,
+    private systemsvc: SystemService,) { }
 
     save(): void {
       if (this.user.password !== this.password2) {
@@ -45,6 +46,7 @@ export class UserEditComponent implements OnInit {
       },
       err => { console.error(err); }
     );
+    //this.user = this.systemsvc.GetUser();
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user.class';
+import { SystemService } from '../../../core/system/system.service'
 
 @Component({
   selector: 'app-user-list',
@@ -9,6 +10,7 @@ import { User } from '../user.class';
 })
 export class UserListComponent implements OnInit {
 
+  user: User;
   users: User[] = [];
   sortCriteria: string = "username";
   sortOrder: string = "asc";
@@ -22,7 +24,8 @@ export class UserListComponent implements OnInit {
   }
 
   constructor(
-    private usersvc: UserService
+    private usersvc: UserService,
+    private systemsvc: SystemService,
   ) { }
 
   ngOnInit() {
@@ -35,6 +38,7 @@ export class UserListComponent implements OnInit {
         console.log(err);
       }
     );
+    //this.user = this.systemsvc.GetUser();
   }
 
 }

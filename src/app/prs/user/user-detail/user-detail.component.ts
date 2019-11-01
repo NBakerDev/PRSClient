@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { SystemService } from '../../../core/system/system.service'
 import { UserService } from '../user.service';
 import { User } from '../user.class';
 
@@ -18,6 +19,7 @@ export class UserDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private usersvc: UserService,
     private router: Router,
+    private systemsvc: SystemService,
   ) { }
 
   edit(): void {
@@ -47,6 +49,7 @@ export class UserDetailComponent implements OnInit {
       },
       err => { console.error(err); }
     );
+    //this.user = this.systemsvc.GetUser();
   }
 
 }

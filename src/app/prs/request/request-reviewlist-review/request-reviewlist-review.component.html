@@ -1,0 +1,56 @@
+<app-menu></app-menu>
+<span class="createlink"><a routerLink="/requestlines/create/{{request.id}}">Create New</a></span> | 
+    <table  *ngIf = "request" class="table table-dark">
+        <tr class="tableheader">
+          <td><a (click)="sortBy('partNbr')">Id</a></td>
+          <td><a (click)="sortBy('photoPath')">Description</a></td>
+          <td><a (click)="sortBy('id')">Status</a></td>
+          <td><a (click)="sortBy('vendor')">Total</a></td>
+          <td><a (click)="sortBy('vendor')">User</a></td>
+          
+          
+        </tr>
+        <tr>
+          <td>{{ request.id }}</td>
+          <td>{{ request.description }}</td>
+          <td>{{ request.status }}</td>
+          <td>{{ request.total |currency}}</td>
+          <td>{{ request.user.username}}</td>
+          </tr>
+          </table>
+          
+          <hr>
+          <div>
+          <table class="table table-dark">
+            <tr class="tableheader">
+              <td><a (click)="sortBy('id')">Id</a></td>
+              <td><a (click)="sortBy('partNbr')">Product</a></td>
+        
+            
+              
+              <td><a (click)="sortBy('photoPath')">Quantity</a></td>
+              <td><a (click)="sortBy('vendor')">Price</a></td>
+              <td><a (click)="sortBy('vendor')">Subtotal</a></td>
+              
+              
+            </tr>
+            <tr *ngFor="let requestline of request.requestLines">
+              <td>{{ requestline.id }}</td>
+              <td>{{ requestline.product.name }}</td>
+              <td>{{ requestline.quantity}}</td>
+              <td>{{ requestline.product.price |currency}}</td>
+              <td>{{ requestline.quantity * requestline.product.price | currency}}</td>
+           
+            </tr>
+          </table>
+        </div>
+<div>
+    <button (click)="approve()" class="btn btn-success">Approve</button> |
+        <button (click)="verify()" class="btn btn-warning">Reject</button>
+        <span *ngIf="verifyReject">
+          |
+          <input [(ngModel)] = "request.rejectionReason" type = "text" />
+           <button (click)="reject()" class="btn btn-danger">Verify</button>
+        </span>
+</div>
+

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { SystemService } from '../../../core/system/system.service'
+import { User } from '../../user/user.class';
 import { Vendor } from '../../vendor/vendor.class';
 import { VendorService } from '../../vendor/vendor.service';
 import { Product } from '../product.class';
@@ -13,6 +15,7 @@ import { ProductService } from '../product.service';
 })
 export class ProductEditComponent implements OnInit {
 
+  user: User;
   product: Product;
   vendors: Vendor[] = [];
   vendor: Vendor;
@@ -30,7 +33,8 @@ export class ProductEditComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private productsvc: ProductService,
-    private vendorsvc: VendorService
+    private vendorsvc: VendorService,
+    private systemsvc: SystemService,
   ) { }
 
   ngOnInit() {
@@ -51,6 +55,7 @@ export class ProductEditComponent implements OnInit {
         console.log(err);
   }
     );
+    this.user = this.systemsvc.GetUser();
   }
 
 }

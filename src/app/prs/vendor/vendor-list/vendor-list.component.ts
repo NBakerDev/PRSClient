@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorService } from '../vendor.service';
 import { Vendor } from '../vendor.class';
-
+import { SystemService } from '../../../core/system/system.service'
+import { User } from '../../user/user.class';
 @Component({
   selector: 'app-vendor-list',
   templateUrl: './vendor-list.component.html',
@@ -13,6 +14,7 @@ export class VendorListComponent implements OnInit {
   sortCriteria: string = "code";
   sortOrder: string = "asc";
   searchCriteria: string = "";
+  user: User;
 
 
   sortBy(prop: string): void{
@@ -24,7 +26,8 @@ export class VendorListComponent implements OnInit {
   
 
   constructor(
-    private vendorsvc: VendorService
+    private vendorsvc: VendorService,
+    private systemsvc: SystemService,
   ) { }
 
   
@@ -39,6 +42,7 @@ export class VendorListComponent implements OnInit {
         console.log(err);
   }
     );
+    this.user = this.systemsvc.GetUser();
 }
 
 }

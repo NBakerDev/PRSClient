@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { SystemService } from '../../../core/system/system.service'
+import { User } from '../../user/user.class';
 import { VendorService } from '../vendor.service';
 import { Vendor } from '../vendor.class';
 
@@ -14,11 +15,13 @@ export class VendorDetailComponent implements OnInit {
 
   vendor: Vendor;
   verifyDelete: boolean = false;
+  user: User;
 
   constructor(
     private route: ActivatedRoute,
     private vendorsvc: VendorService,
     private router: Router,
+    private systemsvc: SystemService,
   ) { }
 
   verify(): void{
@@ -44,6 +47,7 @@ export class VendorDetailComponent implements OnInit {
       },
       err => { console.error(err); }
     );
+    this.user = this.systemsvc.GetUser();
   }
 
 }

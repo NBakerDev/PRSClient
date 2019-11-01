@@ -1,0 +1,29 @@
+<div class="component" *ngIf="requestline">
+    <div class="header">
+      <span class="pagetitle">Request Edit</span> |
+      <span>Back to List</span>
+    </div>
+    <table class="table table-dark">
+      <tr>
+        <td>Id:</td>
+        <td><input [(ngModel)]="requestline.id" type="number" disabled /></td>
+      </tr>
+      
+        <input [(ngModel)]="requestline.productId" type="number" disabled hidden/>
+      
+      <tr>
+        <td>Product:</td>
+        <select [(ngModel)] = "requestline.productId">
+            <option *ngFor = "let product of products" [ngValue] = "product.id">
+                {{product.name}}
+            </option>
+        </select>
+      </tr>
+      <tr>
+        <td>Quantity:</td>
+        <td><input [(ngModel)]="requestline.quantity" type="number" /></td>
+      </tr>
+    </table>
+  
+    <button (click)="save()" class="btn btn-primary btn-sm">Save</button>
+  </div>

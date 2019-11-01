@@ -15,6 +15,7 @@ export class RequestEditComponent implements OnInit {
   request: Request;
 
   save(): void {
+    this.request.status = "EDIT";
     this.requestsvc.change(this.request).subscribe(
       res => { 
         console.log("Request change resp: ", res);

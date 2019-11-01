@@ -8,7 +8,7 @@ import { Vendor } from '../../prs/vendor/vendor.class';
 })
 export class SearchProductPipe implements PipeTransform {
 
-    transform(products: Product[], searchCriteria:string = ''): Product[] {
+    transform(products: Product[],  searchCriteria:string = ''): Product[] {
       if ( searchCriteria == '') { return products; }
       let substr = searchCriteria.toLowerCase();
       let selectedproducts: Product[] = [];

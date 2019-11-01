@@ -1,5 +1,5 @@
 <div class="component" *ngIf="request">
-    <div class="header"><span class="pagetitle">Request Create</span> | <span><a routerLink="/requests/list">Back to List</a></span></div>
+    <div class="header"><span class="pagetitle">Request Create</span> | <span><a routerLink="/requests/list/">Back to List</a></span></div>
     <table class="table table-dark">
       <tr>
         <td>Id:</td>
@@ -22,24 +22,9 @@
         <td><input [(ngModel)]="request.status" type="text" disabled /></td>
       </tr>
       <tr>
-        <td>Total:</td>
-        <td><input [(ngModel)]="request.total" type="text" disabled/></td>
-      </tr>
-      <tr>
-        <td>User:</td>
-        <td><input [(ngModel)]="user.username" type="text" disabled/></td>
-      </tr>
-      <tr>
         
-        <td><input [(ngModel)]="request.userId" type="number" disabled/></td>
+        <td><input [(ngModel)]="request.total" type="number" hidden /></td>
       </tr>
-      <select [(ngModel)]="request.userId">
-        <option [ngValue]="user.id"
-        >{{
-         user.id
-        }}</option>
-      </select>
-      
       
         
         

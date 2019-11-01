@@ -22,6 +22,12 @@ import { RequestDetailComponent } from './prs/request/request-detail/request-det
 import { LoginComponent } from './core/logger/login/login.component';
 import { RequestCreateComponent } from './prs/request/request-create/request-create.component';
 import { RequestEditComponent } from './prs/request/request-edit/request-edit.component';
+import { RequestlineListComponent } from './prs/requestline/requestline-list/requestline-list.component';
+import { RequestlineCreateComponent } from './prs/requestline/requestline-create/requestline-create.component';
+import { RequestlineEditComponent } from './prs/requestline/requestline-edit/requestline-edit.component';
+import { RequestReviewlistComponent } from './prs/request/request-reviewlist/request-reviewlist.component';
+import { RequestReviewlistReviewComponent } from './prs/request/request-reviewlist-review/request-reviewlist-review.component';
+import { RequestlineRemoveComponent } from './prs/requestline/requestline-remove/requestline-remove.component';
 
 
 
@@ -45,6 +51,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'requests/create', component: RequestCreateComponent},
   { path: 'requests/edit/:id', component: RequestEditComponent},
+  { path: 'requestlines/list/:id', component: RequestlineListComponent},
+  { path: 'requestlines/create/:id', component:RequestlineCreateComponent},
+  { path: 'requestlines/list/edit/:id', component: RequestlineEditComponent},
+  { path: 'requests/review/list', component: RequestReviewlistComponent},
+  { path: 'requests/reviewlist/review/:id', component: RequestReviewlistReviewComponent},
+  { path: 'requestlines/remove/:rid/:id', component:RequestlineRemoveComponent},
   { path: '**', component: FourOhFourComponent}
 ];
 

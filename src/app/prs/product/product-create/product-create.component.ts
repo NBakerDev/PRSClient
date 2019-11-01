@@ -5,6 +5,8 @@ import { Vendor } from '../../vendor/vendor.class';
 import { VendorService } from '../../vendor/vendor.service';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
+import { User } from '../../user/user.class'
+import { SystemService } from '../../../core/system/system.service'
 
 @Component({
   selector: 'app-product-create',
@@ -15,11 +17,13 @@ export class ProductCreateComponent implements OnInit {
 
   product : Product = new Product();
   vendors: Vendor[] = [];
+  user: User;
 
   constructor(
     private router: Router,
     private vendorsvc: VendorService,
-    private productsvc: ProductService
+    private productsvc: ProductService,
+    private systemsvc: SystemService,
   ) { }
 
   save(): void {
@@ -41,6 +45,7 @@ export class ProductCreateComponent implements OnInit {
         console.log(err);
   }
     );
+    this.user = this.systemsvc.GetUser();
 
   }
 

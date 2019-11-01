@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { SystemService } from '../../../core/system/system.service'
+import { User } from '../../user/user.class';
 import { ProductService } from '../product.service';
 import { Product } from '../product.class';
 
@@ -11,6 +12,7 @@ import { Product } from '../product.class';
 })
 export class ProductDetailComponent implements OnInit {
 
+  user: User;
   product: Product;
   verifyDelete: boolean = false;
 
@@ -19,6 +21,7 @@ export class ProductDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private productsvc: ProductService,
     private router: Router,
+    private systemsvc: SystemService,
   ) { }
 
   edit(): void {
@@ -48,6 +51,7 @@ export class ProductDetailComponent implements OnInit {
       },
       err => { console.error(err); }
     );
+    this.user = this.systemsvc.GetUser();
   }
 
 }

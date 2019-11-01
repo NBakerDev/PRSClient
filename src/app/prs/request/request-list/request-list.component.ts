@@ -15,6 +15,7 @@ export class RequestListComponent implements OnInit {
   sortCriteria: string = "name";
   sortOrder: string = "asc";
   user: User;
+  searchCriteria: string = "";
 
   sortBy(prop: string): void{
     if(this.sortCriteria === prop){

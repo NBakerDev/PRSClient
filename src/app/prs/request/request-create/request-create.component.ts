@@ -16,7 +16,7 @@ import { User } from '../../user/user.class';
 export class RequestCreateComponent implements OnInit {
   user: User;
   request: Request = new Request;
-
+  
   save(): void {
     
     this.requestsvc.create(this.request).subscribe(
@@ -36,7 +36,10 @@ export class RequestCreateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
     this.user = this.systemsvc.GetUser();
+    this.request.userId = this.user.id;
+ 
     
     
     
